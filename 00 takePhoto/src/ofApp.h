@@ -3,9 +3,9 @@
 #include "ofMain.h"
 #include "ofxiOS.h"
 #include "ofxiOSExtras.h"
+#include "firmiOSImagePicker.h"
 
-
-class ofApp : public ofxiOSApp{
+class ofApp : public ofxiOSApp {
 	
     public:
         void setup();
@@ -23,10 +23,14 @@ class ofApp : public ofxiOSApp{
         void gotFocus();
         void gotMemoryWarning();
         void deviceOrientationChanged(int newOrientation);
-
     
-//    AVFoundationVideoGrabber *grabber;
-    ofxiOSVideoGrabber grabber;
+    
+    
+	unsigned char * cameraPixels;
+	firmiOSImagePicker * camera;
+	ofImage	photo;
+    int status;
+
 };
 
 
